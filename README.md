@@ -38,7 +38,10 @@ Flutter_30_days_UI/
 |-- Day_01_Containers_and_SizedBox/
 |   |-- Container_size.dart          # 50 examples: basic to animated containers
 |
-|-- (Day 02 through Day 30 will be added daily)
+|-- Day_02_Rows_Cols_Wrap/
+|   |-- rows_cols.dart               # 27 examples: Basic to complex real-world layouts
+|
+|-- (Day 03 through Day 30 will be added daily)
 |
 |-- README.md
 ```
@@ -50,7 +53,7 @@ Flutter_30_days_UI/
 | Day | Topic | Examples | Status |
 |:---:|:------|:--------:|:------:|
 | 01 | **Container and SizedBox** -- Basic containers, padding, margin, BoxDecoration, gradients (linear, radial, sweep), shadows, borders, rounded corners, circular shapes, neumorphism, glassmorphism, neon glow, 3D perspective, transforms, AnimatedContainer, pulsating animation, spinning animation, color shifting, bouncing, morphing shapes, flip cards, shimmer loading, music visualizer, wavy clips, diagonal splits, gradient text, and more | 50 | Complete |
-| 02 | *Coming Soon* | -- | Upcoming |
+| 02 | **Row, Column and Wrap** -- Horizontal & vertical layouts, main/cross axis alignment, main axis size, text/vertical direction, Expanded & Flexible for responsive space, Spacer for pushing items, Wrap for overflowing layouts, and 20+ real-life examples including Social Media Headers, E-commerce Product Cards, Settings Lists, Chat Bubbles, Profile Headers, Dashboard Stats, Music Player Controls, Food Order Cards, and Order Tracking Timelines. | 27 | Complete |
 | 03 | *Coming Soon* | -- | Upcoming |
 | 04 | *Coming Soon* | -- | Upcoming |
 | 05 | *Coming Soon* | -- | Upcoming |
@@ -142,6 +145,30 @@ A deep dive into Flutter's most fundamental layout widget. This file covers:
 - Layered fanned-out card deck
 - Avatar with animated rotating gradient ring (Instagram-story style)
 - Ultimate mega showcase: animated rainbow border, gradient text, pulsing scale, and glow shadow combined
+
+---
+
+## Day 02 -- Row, Column and Wrap (27 Examples)
+
+A comprehensive guide to Flutter's core layout widgets. This file covers:
+
+**Layout Fundamentals (Examples 1-7)**
+- **Basic Row:** Horizontal arrangement with center alignment.
+- **MainAxisAlignment:** Start, Center, End, SpaceBetween, SpaceAround, and SpaceEvenly demonstrations.
+- **Basic Column:** Vertical arrangement with specialized alignment.
+- **CrossAxisAlignment:** Aligning items perpendicularly (Start, Center, End).
+- **Expanded Widget:** Filling available space with flex factors (e.g., 2:1 ratio).
+- **Spacer Widget:** Using empty space to push widgets apart (ideal for nav bars).
+- **Wrap Widget:** Handling layout overflow by moving items to the next line/run.
+
+**Real-Life Examples (Examples 8-27)**
+- **Social Media Patterns:** Post headers (IG style), Action bars (Like/Comment/Share), Profile headers with stats, and Story-style avatar layouts.
+- **Communication UI:** WhatsApp-style chat message bubbles (Sent/Received) and notification list items.
+- **E-Commerce & Food:** Amazon-style product cards, Foodpanda-style order cards with quantity toggles, and category filter chips.
+- **System & Utility:** Phone Settings items with toggles, Login form layout, and Contact info cards (Phone/Email/Address).
+- **Dashboard & Stats:** Admin dashboard stat cards (Users/Revenue) and Order tracking timelines (Daraz style).
+- **Media & Content:** Spotify-style music player controls and Instagram-style 3x3 photo gallery grids.
+- **Navigation & Pricing:** Bottom navigation bar layout and SaaS subscription pricing plan cards.
 
 ---
 
