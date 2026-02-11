@@ -248,10 +248,10 @@ class _Container_sizeState extends State<Container_size>
       duration: const Duration(seconds: 3),
       vsync: this,
     )..repeat(reverse: true);
-    _colorAnimation = ColorTween(
-      begin: Colors.deepPurple,
-      end: Colors.cyan,
-    ).animate(CurvedAnimation(parent: _colorController, curve: Curves.easeInOut));
+    _colorAnimation = ColorTween(begin: Colors.deepPurple, end: Colors.cyan)
+        .animate(
+          CurvedAnimation(parent: _colorController, curve: Curves.easeInOut),
+        );
 
     // Bouncing
     _bounceController = AnimationController(
@@ -285,21 +285,23 @@ class _Container_sizeState extends State<Container_size>
       duration: const Duration(seconds: 3),
       vsync: this,
     )..repeat();
-    _flipAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _flipController, curve: Curves.linear),
-    );
+    _flipAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(parent: _flipController, curve: Curves.linear));
 
     // Slide
     _slideController = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
     )..repeat(reverse: true);
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(-0.3, 0),
-      end: const Offset(0.3, 0),
-    ).animate(
-      CurvedAnimation(parent: _slideController, curve: Curves.easeInOut),
-    );
+    _slideAnimation =
+        Tween<Offset>(
+          begin: const Offset(-0.3, 0),
+          end: const Offset(0.3, 0),
+        ).animate(
+          CurvedAnimation(parent: _slideController, curve: Curves.easeInOut),
+        );
 
     // Morphing
     _morphController = AnimationController(
@@ -366,7 +368,10 @@ class _Container_sizeState extends State<Container_size>
               // Child widget
               child: const Text(
                 'Basic Container',
-                style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
             ),
 
@@ -468,10 +473,7 @@ class _Container_sizeState extends State<Container_size>
               decoration: BoxDecoration(
                 color: Colors.white,
                 // Border around the container
-                border: Border.all(
-                  color: Colors.purple,
-                  width: 5,
-                ),
+                border: Border.all(color: Colors.purple, width: 5),
                 // Rounded corners
                 borderRadius: BorderRadius.circular(15),
                 // Shadow effect
@@ -656,25 +658,13 @@ class _Container_sizeState extends State<Container_size>
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.red,
-                ),
+                Container(width: 50, height: 50, color: Colors.red),
                 // SizedBox for horizontal spacing
                 const SizedBox(width: 20),
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.green,
-                ),
+                Container(width: 50, height: 50, color: Colors.green),
                 // SizedBox for horizontal spacing
                 const SizedBox(width: 20),
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.blue,
-                ),
+                Container(width: 50, height: 50, color: Colors.blue),
               ],
             ),
 
@@ -1014,10 +1004,7 @@ class _Container_sizeState extends State<Container_size>
                     ],
                   ),
                   alignment: Alignment.center,
-                  child: const Text(
-                    '❤️',
-                    style: TextStyle(fontSize: 40),
-                  ),
+                  child: const Text('❤️', style: TextStyle(fontSize: 40)),
                 ),
               ),
             ),
@@ -1078,10 +1065,7 @@ class _Container_sizeState extends State<Container_size>
                       borderRadius: BorderRadius.circular(10),
                     ),
                     alignment: Alignment.center,
-                    child: const Text(
-                      '🌀',
-                      style: TextStyle(fontSize: 28),
-                    ),
+                    child: const Text('🌀', style: TextStyle(fontSize: 28)),
                   ),
                 ),
               ),
@@ -1119,8 +1103,8 @@ class _Container_sizeState extends State<Container_size>
                       borderRadius: BorderRadius.circular(25),
                       boxShadow: [
                         BoxShadow(
-                          color:
-                              (_colorAnimation.value ?? Colors.purple).withOpacity(0.5),
+                          color: (_colorAnimation.value ?? Colors.purple)
+                              .withOpacity(0.5),
                           blurRadius: 20,
                           spreadRadius: 3,
                           offset: const Offset(0, 8),
@@ -1182,7 +1166,10 @@ class _Container_sizeState extends State<Container_size>
                             color: const Color(0xFF764ba2).withOpacity(0.4),
                             blurRadius: 20 + (-_bounceAnimation.value),
                             spreadRadius: 2,
-                            offset: Offset(0, 10 + (-_bounceAnimation.value / 2)),
+                            offset: Offset(
+                              0,
+                              10 + (-_bounceAnimation.value / 2),
+                            ),
                           ),
                         ],
                       ),
@@ -1246,10 +1233,7 @@ class _Container_sizeState extends State<Container_size>
                   ],
                 ),
                 alignment: Alignment.center,
-                child: const Text(
-                  '☀️',
-                  style: TextStyle(fontSize: 50),
-                ),
+                child: const Text('☀️', style: TextStyle(fontSize: 50)),
               ),
             ),
 
@@ -1307,10 +1291,7 @@ class _Container_sizeState extends State<Container_size>
                     shape: BoxShape.circle,
                   ),
                   alignment: Alignment.center,
-                  child: const Text(
-                    '🎯',
-                    style: TextStyle(fontSize: 36),
-                  ),
+                  child: const Text('🎯', style: TextStyle(fontSize: 36)),
                 ),
               ),
             ),
@@ -1556,7 +1537,11 @@ class _Container_sizeState extends State<Container_size>
                       child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.credit_card, color: Colors.white, size: 36),
+                          Icon(
+                            Icons.credit_card,
+                            color: Colors.white,
+                            size: 36,
+                          ),
                           SizedBox(height: 8),
                           Text(
                             'Stacked Cards',
@@ -1853,10 +1838,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '29. Frosted Notification Card',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('A modern notification-style container:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'A modern notification-style container:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Container(
@@ -1865,29 +1857,56 @@ class _Container_sizeState extends State<Container_size>
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
-                  BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 20, offset: const Offset(0, 4)),
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.08),
+                    blurRadius: 20,
+                    offset: const Offset(0, 4),
+                  ),
                 ],
               ),
               child: Row(
                 children: [
                   Container(
-                    width: 50, height: 50,
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(colors: [Color(0xFF667eea), Color(0xFF764ba2)]),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF667eea), Color(0xFF764ba2)],
+                      ),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     alignment: Alignment.center,
-                    child: const Icon(Icons.notifications_active, color: Colors.white, size: 28),
+                    child: const Icon(
+                      Icons.notifications_active,
+                      color: Colors.white,
+                      size: 28,
+                    ),
                   ),
                   const SizedBox(width: 14),
                   const Expanded(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text('New Update Available!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                      SizedBox(height: 4),
-                      Text('Tap to download v2.0', style: TextStyle(color: Colors.grey, fontSize: 13)),
-                    ]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'New Update Available!',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          'Tap to download v2.0',
+                          style: TextStyle(color: Colors.grey, fontSize: 13),
+                        ),
+                      ],
+                    ),
                   ),
-                  Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey.shade400),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: 16,
+                    color: Colors.grey.shade400,
+                  ),
                 ],
               ),
             ),
@@ -1899,10 +1918,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '30. Shimmer Skeleton Loader',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Animated shimmer loading effect:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Animated shimmer loading effect:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             AnimatedBuilder(
@@ -1917,37 +1943,67 @@ class _Container_sizeState extends State<Container_size>
                   child: Row(
                     children: [
                       Container(
-                        width: 60, height: 60,
+                        width: 60,
+                        height: 60,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           gradient: LinearGradient(
                             begin: Alignment(_slideController.value * 2 - 1, 0),
                             end: Alignment(_slideController.value * 2, 0),
-                            colors: [Colors.grey.shade200, Colors.grey.shade100, Colors.grey.shade200],
+                            colors: [
+                              Colors.grey.shade200,
+                              Colors.grey.shade100,
+                              Colors.grey.shade200,
+                            ],
                           ),
                         ),
                       ),
                       const SizedBox(width: 14),
                       Expanded(
-                        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                          Container(height: 14, width: 180, decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(7),
-                            gradient: LinearGradient(
-                              begin: Alignment(_slideController.value * 2 - 1, 0),
-                              end: Alignment(_slideController.value * 2, 0),
-                              colors: [Colors.grey.shade300, Colors.grey.shade100, Colors.grey.shade300],
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 14,
+                              width: 180,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                gradient: LinearGradient(
+                                  begin: Alignment(
+                                    _slideController.value * 2 - 1,
+                                    0,
+                                  ),
+                                  end: Alignment(_slideController.value * 2, 0),
+                                  colors: [
+                                    Colors.grey.shade300,
+                                    Colors.grey.shade100,
+                                    Colors.grey.shade300,
+                                  ],
+                                ),
+                              ),
                             ),
-                          )),
-                          const SizedBox(height: 10),
-                          Container(height: 14, width: 120, decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(7),
-                            gradient: LinearGradient(
-                              begin: Alignment(_slideController.value * 2 - 1, 0),
-                              end: Alignment(_slideController.value * 2, 0),
-                              colors: [Colors.grey.shade300, Colors.grey.shade100, Colors.grey.shade300],
+                            const SizedBox(height: 10),
+                            Container(
+                              height: 14,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                gradient: LinearGradient(
+                                  begin: Alignment(
+                                    _slideController.value * 2 - 1,
+                                    0,
+                                  ),
+                                  end: Alignment(_slideController.value * 2, 0),
+                                  colors: [
+                                    Colors.grey.shade300,
+                                    Colors.grey.shade100,
+                                    Colors.grey.shade300,
+                                  ],
+                                ),
+                              ),
                             ),
-                          )),
-                        ]),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -1962,10 +2018,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '31. Shaking Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Vibrating/shaking error-style animation:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Vibrating/shaking error-style animation:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -1975,18 +2038,29 @@ class _Container_sizeState extends State<Container_size>
                   return Transform.translate(
                     offset: Offset(_shakeAnimation.value, 0),
                     child: Container(
-                      width: 200, height: 80,
+                      width: 200,
+                      height: 80,
                       decoration: BoxDecoration(
                         color: Colors.red.shade50,
                         borderRadius: BorderRadius.circular(15),
                         border: Border.all(color: Colors.redAccent, width: 2),
                       ),
                       alignment: Alignment.center,
-                      child: const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                        Icon(Icons.error_outline, color: Colors.redAccent),
-                        SizedBox(width: 8),
-                        Text('Error! Shaking!', style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold, fontSize: 16)),
-                      ]),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.error_outline, color: Colors.redAccent),
+                          SizedBox(width: 8),
+                          Text(
+                            'Error! Shaking!',
+                            style: TextStyle(
+                              color: Colors.redAccent,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
@@ -2000,10 +2074,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '32. Flipping Card Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Continuous Y-axis flip animation:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Continuous Y-axis flip animation:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2018,22 +2099,38 @@ class _Container_sizeState extends State<Container_size>
                       ..setEntry(3, 2, 0.001)
                       ..rotateY(angle),
                     child: Container(
-                      width: 160, height: 100,
+                      width: 160,
+                      height: 100,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: isFront
-                              ? [const Color(0xFFf093fb), const Color(0xFFf5576c)]
-                              : [const Color(0xFF4facfe), const Color(0xFF00f2fe)],
+                              ? [
+                                  const Color(0xFFf093fb),
+                                  const Color(0xFFf5576c),
+                                ]
+                              : [
+                                  const Color(0xFF4facfe),
+                                  const Color(0xFF00f2fe),
+                                ],
                         ),
                         borderRadius: BorderRadius.circular(18),
                         boxShadow: [
-                          BoxShadow(color: (isFront ? Colors.pink : Colors.blue).withOpacity(0.4), blurRadius: 15, offset: const Offset(0, 8)),
+                          BoxShadow(
+                            color: (isFront ? Colors.pink : Colors.blue)
+                                .withOpacity(0.4),
+                            blurRadius: 15,
+                            offset: const Offset(0, 8),
+                          ),
                         ],
                       ),
                       alignment: Alignment.center,
                       child: Text(
                         isFront ? '🎭 Front' : '🔮 Back',
-                        style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   );
@@ -2048,10 +2145,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '33. Morphing Shape Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Border radius animates between square and circle:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Border radius animates between square and circle:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2059,19 +2163,35 @@ class _Container_sizeState extends State<Container_size>
                 animation: _morphAnimation,
                 builder: (context, child) {
                   return Container(
-                    width: 130, height: 130,
+                    width: 130,
+                    height: 130,
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [Color(0xFFa18cd1), Color(0xFFfbc2eb)],
-                        begin: Alignment.topLeft, end: Alignment.bottomRight,
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
-                      borderRadius: BorderRadius.circular(_morphAnimation.value),
+                      borderRadius: BorderRadius.circular(
+                        _morphAnimation.value,
+                      ),
                       boxShadow: [
-                        BoxShadow(color: const Color(0xFFa18cd1).withOpacity(0.5), blurRadius: 20, offset: const Offset(0, 10)),
+                        BoxShadow(
+                          color: const Color(0xFFa18cd1).withOpacity(0.5),
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
+                        ),
                       ],
                     ),
                     alignment: Alignment.center,
-                    child: const Text('🫧\nMorph', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      '🫧\nMorph',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   );
                 },
               ),
@@ -2084,10 +2204,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '34. Sliding Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Container slides left and right:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Container slides left and right:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             SlideTransition(
@@ -2095,14 +2222,27 @@ class _Container_sizeState extends State<Container_size>
               child: Container(
                 height: 80,
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [Color(0xFF43e97b), Color(0xFF38f9d7)]),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF43e97b), Color(0xFF38f9d7)],
+                  ),
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
-                    BoxShadow(color: const Color(0xFF43e97b).withOpacity(0.4), blurRadius: 15, offset: const Offset(0, 8)),
+                    BoxShadow(
+                      color: const Color(0xFF43e97b).withOpacity(0.4),
+                      blurRadius: 15,
+                      offset: const Offset(0, 8),
+                    ),
                   ],
                 ),
                 alignment: Alignment.center,
-                child: const Text('↔️ Sliding!', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                child: const Text(
+                  '↔️ Sliding!',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
 
@@ -2113,28 +2253,51 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '35. Concentric Circles',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Nested circles with decreasing opacity:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Nested circles with decreasing opacity:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
               child: Container(
-                width: 180, height: 180,
-                decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.deepPurple.withOpacity(0.1)),
+                width: 180,
+                height: 180,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.deepPurple.withOpacity(0.1),
+                ),
                 alignment: Alignment.center,
                 child: Container(
-                  width: 140, height: 140,
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.deepPurple.withOpacity(0.2)),
+                  width: 140,
+                  height: 140,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.deepPurple.withOpacity(0.2),
+                  ),
                   alignment: Alignment.center,
                   child: Container(
-                    width: 100, height: 100,
-                    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.deepPurple.withOpacity(0.4)),
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.deepPurple.withOpacity(0.4),
+                    ),
                     alignment: Alignment.center,
                     child: Container(
-                      width: 60, height: 60,
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.deepPurple),
+                      width: 60,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.deepPurple,
+                      ),
                       alignment: Alignment.center,
                       child: const Text('🎯', style: TextStyle(fontSize: 24)),
                     ),
@@ -2150,10 +2313,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '36. Pricing Card Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('A beautiful pricing card layout:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'A beautiful pricing card layout:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2162,38 +2332,94 @@ class _Container_sizeState extends State<Container_size>
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    begin: Alignment.topLeft, end: Alignment.bottomRight,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                     colors: [Color(0xFF6366f1), Color(0xFF8b5cf6)],
                   ),
                   borderRadius: BorderRadius.circular(24),
                   boxShadow: [
-                    BoxShadow(color: const Color(0xFF6366f1).withOpacity(0.4), blurRadius: 25, offset: const Offset(0, 12)),
+                    BoxShadow(
+                      color: const Color(0xFF6366f1).withOpacity(0.4),
+                      blurRadius: 25,
+                      offset: const Offset(0, 12),
+                    ),
                   ],
                 ),
-                child: const Column(mainAxisSize: MainAxisSize.min, children: [
-                  Text('PRO', style: TextStyle(color: Colors.white70, fontSize: 14, letterSpacing: 4, fontWeight: FontWeight.w600)),
-                  SizedBox(height: 12),
-                  Text('\$29', style: TextStyle(color: Colors.white, fontSize: 48, fontWeight: FontWeight.bold)),
-                  Text('/month', style: TextStyle(color: Colors.white60, fontSize: 14)),
-                  SizedBox(height: 20),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Icon(Icons.check_circle, color: Colors.greenAccent, size: 18),
-                    SizedBox(width: 6),
-                    Text('Unlimited Access', style: TextStyle(color: Colors.white, fontSize: 13)),
-                  ]),
-                  SizedBox(height: 6),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Icon(Icons.check_circle, color: Colors.greenAccent, size: 18),
-                    SizedBox(width: 6),
-                    Text('Priority Support', style: TextStyle(color: Colors.white, fontSize: 13)),
-                  ]),
-                  SizedBox(height: 6),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Icon(Icons.check_circle, color: Colors.greenAccent, size: 18),
-                    SizedBox(width: 6),
-                    Text('Custom Themes', style: TextStyle(color: Colors.white, fontSize: 13)),
-                  ]),
-                ]),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'PRO',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 14,
+                        letterSpacing: 4,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    Text(
+                      '\$29',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 48,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '/month',
+                      style: TextStyle(color: Colors.white60, fontSize: 14),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.check_circle,
+                          color: Colors.greenAccent,
+                          size: 18,
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          'Unlimited Access',
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 6),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.check_circle,
+                          color: Colors.greenAccent,
+                          size: 18,
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          'Priority Support',
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 6),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.check_circle,
+                          color: Colors.greenAccent,
+                          size: 18,
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          'Custom Themes',
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
 
@@ -2204,10 +2430,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '37. Tap-to-Swap Colors',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Tap to smoothly swap gradient colors:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Tap to smoothly swap gradient colors:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2216,7 +2449,8 @@ class _Container_sizeState extends State<Container_size>
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 600),
                   curve: Curves.easeInOutCubic,
-                  width: 200, height: 100,
+                  width: 200,
+                  height: 100,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: _isTapped1
@@ -2226,14 +2460,22 @@ class _Container_sizeState extends State<Container_size>
                     borderRadius: BorderRadius.circular(_isTapped1 ? 50 : 15),
                     boxShadow: [
                       BoxShadow(
-                        color: (_isTapped1 ? Colors.orange : Colors.purple).withOpacity(0.5),
-                        blurRadius: 15, offset: const Offset(0, 8),
+                        color: (_isTapped1 ? Colors.orange : Colors.purple)
+                            .withOpacity(0.5),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
                       ),
                     ],
                   ),
                   alignment: Alignment.center,
-                  child: Text(_isTapped1 ? '🔥 Hot!' : '❄️ Cool!',
-                    style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                  child: Text(
+                    _isTapped1 ? '🔥 Hot!' : '❄️ Cool!',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -2245,37 +2487,56 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '38. Diagonal Split Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('ClipPath with a diagonal divider:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'ClipPath with a diagonal divider:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
               child: SizedBox(
-                width: 250, height: 120,
-                child: Stack(children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1a1a2e),
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  ),
-                  ClipPath(
-                    clipper: DiagonalClipper(),
-                    child: Container(
+                width: 250,
+                height: 120,
+                child: Stack(
+                  children: [
+                    Container(
                       decoration: BoxDecoration(
-                        gradient: const LinearGradient(colors: [Color(0xFFe94560), Color(0xFFff6b6b)]),
+                        color: const Color(0xFF1a1a2e),
                         borderRadius: BorderRadius.circular(18),
                       ),
                     ),
-                  ),
-                  const Positioned.fill(
-                    child: Center(
-                      child: Text('⚡ Diagonal Split', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                    ClipPath(
+                      clipper: DiagonalClipper(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFFe94560), Color(0xFFff6b6b)],
+                          ),
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                      ),
                     ),
-                  ),
-                ]),
+                    const Positioned.fill(
+                      child: Center(
+                        child: Text(
+                          '⚡ Diagonal Split',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
 
@@ -2286,14 +2547,22 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '39. Music Visualizer Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Animated bars simulating audio visualization:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Animated bars simulating audio visualization:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Container(
-              width: double.infinity, height: 100,
+              width: double.infinity,
+              height: 100,
               decoration: BoxDecoration(
                 color: const Color(0xFF1a1a2e),
                 borderRadius: BorderRadius.circular(18),
@@ -2306,15 +2575,27 @@ class _Container_sizeState extends State<Container_size>
                   return AnimatedBuilder(
                     animation: _bounceController,
                     builder: (context, child) {
-                      final h = 20.0 + 40.0 * ((math.sin((_bounceController.value * math.pi * 2) + (i * 0.5)).abs()));
+                      final h =
+                          20.0 +
+                          40.0 *
+                              ((math
+                                  .sin(
+                                    (_bounceController.value * math.pi * 2) +
+                                        (i * 0.5),
+                                  )
+                                  .abs()));
                       return Container(
                         width: 8,
                         height: h,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(4),
                           gradient: LinearGradient(
-                            begin: Alignment.bottomCenter, end: Alignment.topCenter,
-                            colors: [Colors.cyanAccent, Colors.purpleAccent.withOpacity(0.8)],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: [
+                              Colors.cyanAccent,
+                              Colors.purpleAccent.withOpacity(0.8),
+                            ],
                           ),
                         ),
                       );
@@ -2331,19 +2612,41 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '40. Stats Counter Row',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Clean stat cards in a row:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Clean stat cards in a row:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Row(
               children: [
-                _buildStatCard('Downloads', '12.5K', Icons.download, const Color(0xFF3b82f6)),
+                _buildStatCard(
+                  'Downloads',
+                  '12.5K',
+                  Icons.download,
+                  const Color(0xFF3b82f6),
+                ),
                 const SizedBox(width: 10),
-                _buildStatCard('Rating', '4.9 ⭐', Icons.star, const Color(0xFFf59e0b)),
+                _buildStatCard(
+                  'Rating',
+                  '4.9 ⭐',
+                  Icons.star,
+                  const Color(0xFFf59e0b),
+                ),
                 const SizedBox(width: 10),
-                _buildStatCard('Users', '8.2K', Icons.people, const Color(0xFF10b981)),
+                _buildStatCard(
+                  'Users',
+                  '8.2K',
+                  Icons.people,
+                  const Color(0xFF10b981),
+                ),
               ],
             ),
 
@@ -2354,10 +2657,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '41. Scale-on-Tap Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Press and hold to shrink, release to bounce back:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Press and hold to shrink, release to bounce back:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2370,16 +2680,30 @@ class _Container_sizeState extends State<Container_size>
                   duration: const Duration(milliseconds: 200),
                   curve: Curves.easeOutBack,
                   child: Container(
-                    width: 200, height: 100,
+                    width: 200,
+                    height: 100,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(colors: [Color(0xFFfc5c7d), Color(0xFF6a82fb)]),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFFfc5c7d), Color(0xFF6a82fb)],
+                      ),
                       borderRadius: BorderRadius.circular(22),
                       boxShadow: [
-                        BoxShadow(color: const Color(0xFF6a82fb).withOpacity(0.5), blurRadius: 20, offset: const Offset(0, 10)),
+                        BoxShadow(
+                          color: const Color(0xFF6a82fb).withOpacity(0.5),
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
+                        ),
                       ],
                     ),
                     alignment: Alignment.center,
-                    child: const Text('👇 Hold Me!', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      '👇 Hold Me!',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -2392,24 +2716,40 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '42. Wavy Bottom Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Custom clipped wave shape at the bottom:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Custom clipped wave shape at the bottom:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             ClipPath(
               clipper: WaveClipper(),
               child: Container(
-                width: double.infinity, height: 140,
+                width: double.infinity,
+                height: 140,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [Color(0xFF2196F3), Color(0xFF9C27B0)],
-                    begin: Alignment.topLeft, end: Alignment.bottomRight,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
                 ),
                 alignment: const Alignment(0, -0.3),
-                child: const Text('🌊 Wavy Container', style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
+                child: const Text(
+                  '🌊 Wavy Container',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
 
@@ -2420,22 +2760,36 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '43. Diamond Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('A 45° rotated square forming a diamond:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'A 45° rotated square forming a diamond:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 20),
 
             Center(
               child: Transform.rotate(
                 angle: math.pi / 4,
                 child: Container(
-                  width: 100, height: 100,
+                  width: 100,
+                  height: 100,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [Color(0xFF00c6ff), Color(0xFF0072ff)]),
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF00c6ff), Color(0xFF0072ff)],
+                    ),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
-                      BoxShadow(color: const Color(0xFF0072ff).withOpacity(0.4), blurRadius: 20, offset: const Offset(5, 5)),
+                      BoxShadow(
+                        color: const Color(0xFF0072ff).withOpacity(0.4),
+                        blurRadius: 20,
+                        offset: const Offset(5, 5),
+                      ),
                     ],
                   ),
                   alignment: Alignment.center,
@@ -2454,20 +2808,45 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '44. Social Media Icon Containers',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Gradient icon circles:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Gradient icon circles:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildSocialIcon(Icons.camera_alt, [const Color(0xFFf09433), const Color(0xFFe6683c), const Color(0xFFdc2743), const Color(0xFFcc2366), const Color(0xFFbc1888)]),
-                _buildSocialIcon(Icons.smart_display, [const Color(0xFFFF0000), const Color(0xFFCC0000)]),
-                _buildSocialIcon(Icons.music_note, [const Color(0xFF25F4EE), const Color(0xFFFE2C55)]),
-                _buildSocialIcon(Icons.code, [const Color(0xFF333333), const Color(0xFF666666)]),
-                _buildSocialIcon(Icons.chat_bubble, [const Color(0xFF25D366), const Color(0xFF128C7E)]),
+                _buildSocialIcon(Icons.camera_alt, [
+                  const Color(0xFFf09433),
+                  const Color(0xFFe6683c),
+                  const Color(0xFFdc2743),
+                  const Color(0xFFcc2366),
+                  const Color(0xFFbc1888),
+                ]),
+                _buildSocialIcon(Icons.smart_display, [
+                  const Color(0xFFFF0000),
+                  const Color(0xFFCC0000),
+                ]),
+                _buildSocialIcon(Icons.music_note, [
+                  const Color(0xFF25F4EE),
+                  const Color(0xFFFE2C55),
+                ]),
+                _buildSocialIcon(Icons.code, [
+                  const Color(0xFF333333),
+                  const Color(0xFF666666),
+                ]),
+                _buildSocialIcon(Icons.chat_bubble, [
+                  const Color(0xFF25D366),
+                  const Color(0xFF128C7E),
+                ]),
               ],
             ),
 
@@ -2478,14 +2857,22 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '45. Animated Progress Bar Container',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('A breathing progress indicator:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'A breathing progress indicator:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Container(
-              width: double.infinity, height: 30,
+              width: double.infinity,
+              height: 30,
               decoration: BoxDecoration(
                 color: Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(15),
@@ -2499,15 +2886,27 @@ class _Container_sizeState extends State<Container_size>
                     widthFactor: 0.3 + 0.5 * fraction,
                     child: Container(
                       decoration: BoxDecoration(
-                        gradient: const LinearGradient(colors: [Color(0xFF667eea), Color(0xFF764ba2)]),
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF667eea), Color(0xFF764ba2)],
+                        ),
                         borderRadius: BorderRadius.circular(15),
                         boxShadow: [
-                          BoxShadow(color: const Color(0xFF764ba2).withOpacity(0.5), blurRadius: 10, offset: const Offset(0, 3)),
+                          BoxShadow(
+                            color: const Color(0xFF764ba2).withOpacity(0.5),
+                            blurRadius: 10,
+                            offset: const Offset(0, 3),
+                          ),
                         ],
                       ),
                       alignment: Alignment.center,
-                      child: Text('${(30 + 50 * fraction).toInt()}%',
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)),
+                      child: Text(
+                        '${(30 + 50 * fraction).toInt()}%',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
                     ),
                   );
                 },
@@ -2521,14 +2920,22 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '46. Dark Container with Gradient Text',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('ShaderMask for gradient text:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'ShaderMask for gradient text:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Container(
-              width: double.infinity, height: 100,
+              width: double.infinity,
+              height: 100,
               decoration: BoxDecoration(
                 color: const Color(0xFF0f0f23),
                 borderRadius: BorderRadius.circular(18),
@@ -2540,7 +2947,12 @@ class _Container_sizeState extends State<Container_size>
                 ).createShader(bounds),
                 child: const Text(
                   '✦ FLUTTER MAGIC ✦',
-                  style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w900, letterSpacing: 2),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 2,
+                  ),
                 ),
               ),
             ),
@@ -2552,10 +2964,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '47. Animated Border Width',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Tap to animate border thickness and color:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Tap to animate border thickness and color:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2564,7 +2983,8 @@ class _Container_sizeState extends State<Container_size>
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeOutBack,
-                  width: 180, height: 100,
+                  width: 180,
+                  height: 100,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -2574,14 +2994,22 @@ class _Container_sizeState extends State<Container_size>
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: (_isTapped3 ? Colors.deepOrange : Colors.blue).withOpacity(0.3),
-                        blurRadius: _isTapped3 ? 20 : 8, offset: const Offset(0, 5),
+                        color: (_isTapped3 ? Colors.deepOrange : Colors.blue)
+                            .withOpacity(0.3),
+                        blurRadius: _isTapped3 ? 20 : 8,
+                        offset: const Offset(0, 5),
                       ),
                     ],
                   ),
                   alignment: Alignment.center,
-                  child: Text(_isTapped3 ? '🟠 Thick!' : '🔵 Thin',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: _isTapped3 ? Colors.deepOrange : Colors.blue)),
+                  child: Text(
+                    _isTapped3 ? '🟠 Thick!' : '🔵 Thin',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: _isTapped3 ? Colors.deepOrange : Colors.blue,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -2593,15 +3021,23 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '48. Layered Cards Deck',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Fanned-out card stack with rotation:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Fanned-out card stack with rotation:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 20),
 
             Center(
               child: SizedBox(
-                width: 220, height: 160,
+                width: 220,
+                height: 160,
                 child: Stack(
                   alignment: Alignment.center,
                   children: List.generate(5, (i) {
@@ -2615,12 +3051,17 @@ class _Container_sizeState extends State<Container_size>
                     return Transform.rotate(
                       angle: (i - 2) * 0.12,
                       child: Container(
-                        width: 140, height: 90,
+                        width: 140,
+                        height: 90,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(colors: colors[i]),
                           borderRadius: BorderRadius.circular(14),
                           boxShadow: [
-                            BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 8, offset: const Offset(0, 4)),
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.15),
+                              blurRadius: 8,
+                              offset: const Offset(0, 4),
+                            ),
                           ],
                         ),
                       ),
@@ -2637,10 +3078,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '49. Avatar with Gradient Ring',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Instagram-story style gradient ring:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Instagram-story style gradient ring:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2648,26 +3096,35 @@ class _Container_sizeState extends State<Container_size>
                 animation: _rotateController,
                 builder: (context, child) {
                   return Container(
-                    width: 130, height: 130,
+                    width: 130,
+                    height: 130,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: SweepGradient(
                         startAngle: _rotateController.value * 2 * math.pi,
                         colors: const [
-                          Color(0xFFfeda75), Color(0xFFfa7e1e),
-                          Color(0xFFd62976), Color(0xFF962fbf),
-                          Color(0xFF4f5bd5), Color(0xFFfeda75),
+                          Color(0xFFfeda75),
+                          Color(0xFFfa7e1e),
+                          Color(0xFFd62976),
+                          Color(0xFF962fbf),
+                          Color(0xFF4f5bd5),
+                          Color(0xFFfeda75),
                         ],
                       ),
                     ),
                     padding: const EdgeInsets.all(4),
                     child: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                      ),
                       padding: const EdgeInsets.all(3),
                       child: Container(
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          gradient: RadialGradient(colors: [Color(0xFFe0c3fc), Color(0xFF8ec5fc)]),
+                          gradient: RadialGradient(
+                            colors: [Color(0xFFe0c3fc), Color(0xFF8ec5fc)],
+                          ),
                         ),
                         alignment: Alignment.center,
                         child: const Text('👤', style: TextStyle(fontSize: 40)),
@@ -2685,10 +3142,17 @@ class _Container_sizeState extends State<Container_size>
             // ==============================================================
             const Text(
               '50. Mega Showcase Container 🏆',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 8),
-            const Text('Combining multiple effects into one epic container:', style: TextStyle(color: Colors.grey)),
+            const Text(
+              'Combining multiple effects into one epic container:',
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 12),
 
             Center(
@@ -2705,14 +3169,20 @@ class _Container_sizeState extends State<Container_size>
                         gradient: SweepGradient(
                           startAngle: _rotateController.value * 2 * math.pi,
                           colors: const [
-                            Colors.red, Colors.orange, Colors.yellow,
-                            Colors.green, Colors.blue, Colors.purple, Colors.red,
+                            Colors.red,
+                            Colors.orange,
+                            Colors.yellow,
+                            Colors.green,
+                            Colors.blue,
+                            Colors.purple,
+                            Colors.red,
                           ],
                         ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.purpleAccent.withOpacity(0.3),
-                            blurRadius: 25, spreadRadius: 3,
+                            blurRadius: 25,
+                            spreadRadius: 3,
                           ),
                         ],
                       ),
@@ -2722,25 +3192,62 @@ class _Container_sizeState extends State<Container_size>
                           color: const Color(0xFF0f0c29),
                           borderRadius: BorderRadius.circular(25),
                         ),
-                        child: Column(mainAxisSize: MainAxisSize.min, children: [
-                          ShaderMask(
-                            shaderCallback: (bounds) => const LinearGradient(
-                              colors: [Colors.cyanAccent, Colors.purpleAccent],
-                            ).createShader(bounds),
-                            child: const Text('🎆 ULTIMATE', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w900, letterSpacing: 3)),
-                          ),
-                          const SizedBox(height: 8),
-                          const Text('CONTAINER', style: TextStyle(color: Colors.white54, fontSize: 14, letterSpacing: 8)),
-                          const SizedBox(height: 16),
-                          Container(height: 2, width: 80, decoration: BoxDecoration(
-                            gradient: const LinearGradient(colors: [Colors.transparent, Colors.cyanAccent, Colors.transparent]),
-                            borderRadius: BorderRadius.circular(1),
-                          )),
-                          const SizedBox(height: 16),
-                          const Text('Animated border + gradient text\n+ pulsing scale + glow shadow',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white38, fontSize: 12, height: 1.5)),
-                        ]),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ShaderMask(
+                              shaderCallback: (bounds) => const LinearGradient(
+                                colors: [
+                                  Colors.cyanAccent,
+                                  Colors.purpleAccent,
+                                ],
+                              ).createShader(bounds),
+                              child: const Text(
+                                '🎆 ULTIMATE',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 3,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'CONTAINER',
+                              style: TextStyle(
+                                color: Colors.white54,
+                                fontSize: 14,
+                                letterSpacing: 8,
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            Container(
+                              height: 2,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Colors.transparent,
+                                    Colors.cyanAccent,
+                                    Colors.transparent,
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(1),
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            const Text(
+                              'Animated border + gradient text\n+ pulsing scale + glow shadow',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white38,
+                                fontSize: 12,
+                                height: 1.5,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );
@@ -2775,7 +3282,9 @@ class _Container_sizeState extends State<Container_size>
                   Text('• Use color OR decoration, not both together'),
                   Text('• padding = inside, margin = outside'),
                   Text('• Use SizedBox for simple spacing'),
-                  Text('• BorderRadius for rounded, BoxShape.circle for circles'),
+                  Text(
+                    '• BorderRadius for rounded, BoxShape.circle for circles',
+                  ),
                   Text('• boxShadow adds depth and visual hierarchy'),
                   Text('• Gradients make beautiful backgrounds'),
                   Text('• AnimatedContainer for smooth transitions'),
@@ -2800,7 +3309,12 @@ class _Container_sizeState extends State<Container_size>
   }
 
   // Helper: Stat card
-  Widget _buildStatCard(String label, String value, IconData icon, Color color) {
+  Widget _buildStatCard(
+    String label,
+    String value,
+    IconData icon,
+    Color color,
+  ) {
     return Expanded(
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16),
@@ -2809,13 +3323,26 @@ class _Container_sizeState extends State<Container_size>
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: color.withOpacity(0.3)),
         ),
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Icon(icon, color: color, size: 24),
-          const SizedBox(height: 6),
-          Text(value, style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 16)),
-          const SizedBox(height: 2),
-          Text(label, style: TextStyle(color: color.withOpacity(0.7), fontSize: 11)),
-        ]),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, color: color, size: 24),
+            const SizedBox(height: 6),
+            Text(
+              value,
+              style: TextStyle(
+                color: color,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              label,
+              style: TextStyle(color: color.withOpacity(0.7), fontSize: 11),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -2823,12 +3350,21 @@ class _Container_sizeState extends State<Container_size>
   // Helper: Social media icon
   Widget _buildSocialIcon(IconData icon, List<Color> colors) {
     return Container(
-      width: 56, height: 56,
+      width: 56,
+      height: 56,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: colors),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: colors,
+        ),
         boxShadow: [
-          BoxShadow(color: colors.last.withOpacity(0.4), blurRadius: 10, offset: const Offset(0, 4)),
+          BoxShadow(
+            color: colors.last.withOpacity(0.4),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
         ],
       ),
       alignment: Alignment.center,
@@ -2883,10 +3419,12 @@ class DashedBorderPainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     final path = Path()
-      ..addRRect(RRect.fromRectAndRadius(
-        Rect.fromLTWH(0, 0, size.width, size.height),
-        Radius.circular(radius),
-      ));
+      ..addRRect(
+        RRect.fromRectAndRadius(
+          Rect.fromLTWH(0, 0, size.width, size.height),
+          Radius.circular(radius),
+        ),
+      );
 
     // Draw dashed path
     final dashPath = Path();
@@ -2935,8 +3473,18 @@ class WaveClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final path = Path();
     path.lineTo(0, size.height - 30);
-    path.quadraticBezierTo(size.width * 0.25, size.height, size.width * 0.5, size.height - 20);
-    path.quadraticBezierTo(size.width * 0.75, size.height - 40, size.width, size.height - 10);
+    path.quadraticBezierTo(
+      size.width * 0.25,
+      size.height,
+      size.width * 0.5,
+      size.height - 20,
+    );
+    path.quadraticBezierTo(
+      size.width * 0.75,
+      size.height - 40,
+      size.width,
+      size.height - 10,
+    );
     path.lineTo(size.width, 0);
     path.close();
     return path;
