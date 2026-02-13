@@ -41,7 +41,10 @@ Flutter_30_days_UI/
 |-- Day_02_Rows_Cols_Wrap/
 |   |-- rows_cols.dart               # 27 examples: Basic to complex real-world layouts
 |
-|-- (Day 03 through Day 30 will be added daily)
+|-- Day_03_ListView_GridView/
+|   |-- List_Grid.dart               # 18 examples: All ListView & GridView variations
+|
+|-- (Day 04 through Day 30 will be added daily)
 |
 |-- README.md
 ```
@@ -54,7 +57,7 @@ Flutter_30_days_UI/
 |:---:|:------|:--------:|:------:|
 | 01 | **Container and SizedBox** -- Basic containers, padding, margin, BoxDecoration, gradients (linear, radial, sweep), shadows, borders, rounded corners, circular shapes, neumorphism, glassmorphism, neon glow, 3D perspective, transforms, AnimatedContainer, pulsating animation, spinning animation, color shifting, bouncing, morphing shapes, flip cards, shimmer loading, music visualizer, wavy clips, diagonal splits, gradient text, and more | 50 | Complete |
 | 02 | **Row, Column and Wrap** -- Horizontal & vertical layouts, main/cross axis alignment, main axis size, text/vertical direction, Expanded & Flexible for responsive space, Spacer for pushing items, Wrap for overflowing layouts, and 20+ real-life examples including Social Media Headers, E-commerce Product Cards, Settings Lists, Chat Bubbles, Profile Headers, Dashboard Stats, Music Player Controls, Food Order Cards, and Order Tracking Timelines. | 27 | Complete |
-| 03 | *Coming Soon* | -- | Upcoming |
+| 03 | **ListView and GridView** -- ListView.builder, ListView.separated, ListView() default, ListView.custom, Horizontal ListView, Reverse ListView, ListView with itemExtent, ListView with ScrollController, ListView with shrinkWrap, GridView.builder, GridView.count, GridView.extent, GridView() default, GridView with MaxCrossAxisExtent delegate, GridView.custom, Horizontal GridView, GridView with mainAxisExtent, and GridView with childAspectRatio comparisons. | 18 | Complete |
 | 04 | *Coming Soon* | -- | Upcoming |
 | 05 | *Coming Soon* | -- | Upcoming |
 | 06 | *Coming Soon* | -- | Upcoming |
@@ -172,6 +175,34 @@ A comprehensive guide to Flutter's core layout widgets. This file covers:
 
 ---
 
+## Day 03 -- ListView and GridView (18 Examples)
+
+A complete guide to Flutter's scrollable list and grid widgets. This file covers:
+
+**ListView Variations (Examples 1-9)**
+- **ListView.builder:** Lazy item creation for large/infinite lists -- the most common and recommended approach.
+- **ListView.separated:** Like builder, but with customizable separator widgets between each item (dividers, colored gaps).
+- **ListView() Default:** All children created immediately -- best for small, fixed lists with known widgets.
+- **ListView.custom:** Maximum control using SliverChildBuilderDelegate for advanced custom behavior.
+- **Horizontal ListView:** `scrollDirection: Axis.horizontal` for left/right scrolling cards and items.
+- **Reverse ListView:** `reverse: true` for bottom-to-top scrolling (chat-style UI with message bubbles).
+- **ListView with itemExtent:** Fixed height per item for improved scroll performance.
+- **ListView with ScrollController:** Programmatic scroll-to-top and scroll-to-bottom with animated scrolling.
+- **ListView with shrinkWrap:** Nested lists inside SingleChildScrollView using `shrinkWrap: true` and `NeverScrollableScrollPhysics()`.
+
+**GridView Variations (Examples 10-18)**
+- **GridView.builder:** Lazy grid item creation -- recommended for large grids with `SliverGridDelegateWithFixedCrossAxisCount`.
+- **GridView.count:** Quick shorthand for fixed column count grids with `crossAxisCount`.
+- **GridView.extent:** Auto-calculated columns using `maxCrossAxisExtent` for responsive layouts.
+- **GridView() Default:** Explicit `gridDelegate` with hardcoded children list (icon dashboard style).
+- **GridView.builder + MaxCrossAxisExtent:** `SliverGridDelegateWithMaxCrossAxisExtent` for adaptive column counts.
+- **GridView.custom:** Full control with `SliverChildBuilderDelegate` + `SliverGridDelegate` and radial gradients.
+- **Horizontal GridView:** `scrollDirection: Axis.horizontal` with 2-row and 3-row horizontal scrolling grids.
+- **GridView with mainAxisExtent:** Fixed tile height that overrides `childAspectRatio` for tall card layouts.
+- **GridView with childAspectRatio:** Side-by-side comparison of 0.6 (tall), 1.0 (square), and 2.0 (wide) tile ratios.
+
+---
+
 ## How to Use
 
 Each file is a standalone Flutter widget. To run any day's code in your own project:
@@ -203,7 +234,7 @@ No external packages are required for any of the examples -- everything uses onl
 
 | Category | Topics |
 |:---------|:-------|
-| **Layout** | Container, SizedBox, Row, Column, Stack, Positioned, Wrap, Expanded |
+| **Layout** | Container, SizedBox, Row, Column, Stack, Positioned, Wrap, Expanded, ListView, GridView |
 | **Decoration** | BoxDecoration, BorderRadius, BoxShadow, Border, ShapeDecoration |
 | **Gradients** | LinearGradient, RadialGradient, SweepGradient |
 | **Animation** | AnimatedContainer, AnimationController, Tween, CurvedAnimation, ScaleTransition, RotationTransition, SlideTransition |
@@ -211,6 +242,7 @@ No external packages are required for any of the examples -- everything uses onl
 | **Clipping** | ClipPath, ClipRRect, CustomClipper |
 | **Painting** | CustomPaint, CustomPainter, Canvas, ShaderMask |
 | **Design Patterns** | Neumorphism, Glassmorphism, Material Design, Gradient borders, Neon glow, Skeleton loading |
+| **Scrolling** | ListView.builder, ListView.separated, ListView.custom, GridView.builder, GridView.count, GridView.extent, GridView.custom, ScrollController, shrinkWrap, SliverGridDelegate |
 
 ---
 
